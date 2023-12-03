@@ -1,0 +1,15 @@
+body{
+  background-image: url(../../public/img/losSimpson.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 16px;
+  margin: 16px auto;
+}

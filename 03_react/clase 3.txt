@@ -1,0 +1,8 @@
+npx create name
+npm i
+npm start
+rfc
+ctrl + shift +L
+https://nextui.org/
+uiverse.io
+https://www.jsondataai.com/
