@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { CardCharacter } from "../components/CardCharacter";
-import '../index.css'
+/* import '../index.css' */
+import './Card.css'
 
 const RandomCharacter = () => {
     const [character, setCharacter] = useState([])
@@ -32,8 +33,8 @@ const RandomCharacter = () => {
         <h1>LOS SIMPSONS</h1>
   
         <h3>{count}</h3>
-        <button onClick={handleSuma}>+</button>
-        <button onClick={handleResta} > - </button>
+        <button className='suma' onClick={handleSuma}>+</button>
+        <button className='resta' onClick={handleResta} > - </button>
         <section className='cards'>
         {character.map((character, id) => {
           return (

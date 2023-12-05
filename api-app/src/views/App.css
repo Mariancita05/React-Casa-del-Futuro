@@ -1,4 +1,4 @@
-body{
+body {
   background-image: url(../../public/img/losSimpson.jpg);
   background-size: cover;
   background-position: center;
@@ -6,10 +6,47 @@ body{
   height: 100vh;
 }
 
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  gap: 16px;
-  margin: 16px auto;
+nav Link {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+nav li {
+  display: inline-block;
+  width: 31.7%;
+  padding: 5px 10px;
+  background-color: rgb(255, 1, 1);
+  border: 1px solid #000;
+  text-align: center;
+  color: #fff;
+}
+
+nav li:hover {
+  background-color: rgb(255, 230, 1);
+  color: #000;
+}
+
+
+h1 {
+  text-align: center;
+  margin-top: 170px;
+  color: rgb(255, 230, 1);
+  font-size: 100px;
+  text-shadow: 2px 2px 2px black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a button {
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  margin-top: 30PX;
+  margin-left: 40%;
+  padding: 20px;
+  border-radius: 55%;
+  letter-spacing: 5px;
+  font-weight: 600;
+  color: white;
+  font-size: 20px;
 }

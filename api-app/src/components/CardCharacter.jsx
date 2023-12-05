@@ -14,7 +14,7 @@ export const CardCharacter = ({ character }) => {
         src={character.Imagen}
         alt={character.Nombre}
       />
-      <h3 className="charList__ocupacion">{character.Ocupacion}</h3>
+      <h4 className="charList__ocupacion">{character.Ocupacion}</h4>
       {/* <p className="numB">{character._id[0]}</p> */}
     </article>
   );

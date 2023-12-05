@@ -8,12 +8,12 @@ function App() {
   return (
     <>
       <main>
-      <h1>LOS SIMPSON</h1>
+      <h1 className="your-style titulo">LOS SIMPSON</h1>
         <Link
           style={{ textDecoration: "none", color: "#fff" }}
           to="/randomCharacter"
         >
-          <button>Personajes</button>
+          <button>PERSONAJES</button>
         </Link>
       </main>
     </>

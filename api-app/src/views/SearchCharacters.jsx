@@ -2,6 +2,7 @@ import React from 'react'
 import { CardCharacter } from "../components/CardCharacter";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import "./Search.css"
 
 const SearchCharacters = () => {
     const [busqueda, setBusqueda] = useState("");
