@@ -1,5 +1,10 @@
 body {
     background-color: rgb(87, 206, 253);
+    background-image: url(../../public/img/nubesFondo.jpg);
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .cards {

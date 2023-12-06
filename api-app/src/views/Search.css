@@ -53,7 +53,7 @@ h1 {
     box-shadow: 2px 2px 2px rgb(3, 3, 3);
   }
 
-  form button>hover {
+  form button:hover {
     background-color: red;    
     color: rgb(255, 255, 255);    
   }
