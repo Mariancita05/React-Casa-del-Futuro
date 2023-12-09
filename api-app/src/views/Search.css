@@ -1,14 +1,15 @@
-body {
+.container {
     background-image: url(../../public/img/losSimpsonSearch.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     height: 100vh;
 }
 
 h1 {
     text-align: center;
-    margin-top: 170px;
+/*     margin-top: 170px; */
     color: red;
     font-size: 50px;
     text-shadow: 2px 2px 2px white;
@@ -36,6 +37,11 @@ h1 {
     box-shadow: 2px 2px 2px rgb(255, 0, 0);
     border: 2px solid red;
     color: red;
+  }
+
+  form input:active, form input:focus{
+    outline: none;
+  border: red solid 4px;
   }
 
   form button {

@@ -1,10 +1,11 @@
-body {
-    background-color: rgb(87, 206, 253);
+.bg {
+    
     background-image: url(../../public/img/nubesFondo.jpg);
     background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .cards {
@@ -12,7 +13,8 @@ body {
     flex-wrap: wrap;
     max-width: 1000px;
     gap: 16px;
-    margin: 16px auto;
+    padding: 16px;
+    margin: 0px auto;
 }
 
 button {
@@ -21,23 +23,19 @@ button {
     background-color: rgb(255, 255, 255);    
     margin-bottom: 30px;
     margin-top: -50px;
-    border-radius: 50%;
+    border-radius: 50px;
     color: rgb(59, 182, 253);
     font-weight: 500;
     font-size: 30px;
     border: 0;
 }
 
-button.suma {
-    
-    
+button.suma {   
     margin-left: 40%;
     padding: 12px 20px;
 }
 
-button.resta {
-   
-  
+button.resta {  
     margin-left: 5%;
     padding: 14px 25px;
 }

@@ -6,7 +6,7 @@ export const CardCharacter = ({ character }) => {
   return (
     <article className="card" key={character._id}>
       {/* <p className="numT">{character._id[0]}</p> */}
-      <Link to="/characterInfo">
+      <Link to={"/characterInfo/"+character.Nombre}>
       <h2 className="charList__nombre">{character.Nombre}</h2>
     </Link>
       <img

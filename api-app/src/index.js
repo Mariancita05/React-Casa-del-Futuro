@@ -12,7 +12,7 @@ import Character from "./components/Character";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -20,10 +20,9 @@ root.render(
           <Route path="randomCharacter" element={<RandomCharacter/>}/>
           <Route path="characters/:nombreCharacter" element={<CardCharacter />} />
           <Route path="search" element={<SearchCharacters/>}/>
-          <Route path="characterInfo" element={<Character/>}/>
+          <Route path="characterInfo/:nombreCharacter" element={<Character/>}/>
         </Route>
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
 );

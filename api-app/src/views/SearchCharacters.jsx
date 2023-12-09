@@ -3,11 +3,15 @@ import { CardCharacter } from "../components/CardCharacter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Search.css";
+import "../components/cardCharacter.css"
+
+
 
 const SearchCharacters = () => {
   const [busqueda, setBusqueda] = useState("");
+  const [currentBusqueda, setCurrentBusqueda] = useState("");
   const [character, setCharacter] = useState([]);
-  const { nombreCharacter } = useParams();
+
 
   /* const getCharacter = async () => {
     const res = await fetch(
@@ -21,58 +25,67 @@ const SearchCharacters = () => {
     console.log(found);
   }; */
 
-  const getCharacter = async () => {
-    const response = await fetch(
-      `https://apisimpsons.fly.dev/api/personajes/find/${nombreCharacter}`
-    );
-    const data = await response.json();
-    const found = await data.result.find(
-      (character) => character.Nombre.trim() === nombreCharacter.trim()
-    );
-    setCharacter(found);
-  };
+
 
   useEffect(() => {
-    
+    const getCharacter = async () => {
+      const response = await fetch(
+        `https://apisimpsons.fly.dev/api/personajes/find/${busqueda}`
+      );
+      console.log(response);
+      const data = await response.json();
+/*       const found = await data.result.find(
+        (character) => character.Nombre.trim() === busqueda.trim()
+      ); */
+
+      console.log(data);
+      setCharacter(data.result);
+    };
+    console.log("efect");
     getCharacter();
-  }, [nombreCharacter]);
+  }, [currentBusqueda]);
 
   const handleInputChange = (e) => {
     setBusqueda(e.target.value);
+    console.log(e.target.value);
+    console.log(character);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-    getCharacter();
+    setCurrentBusqueda(busqueda);
   };
 
- /*  useEffect(() => {
-    const fetchData = async () => {
-      if (nombreCharacter) {
-        getCharacter();
-      }
-    };
-    fetchData();
-  }, [nombreCharacter, character]); */
+  /*  useEffect(() => {
+     const fetchData = async () => {
+       if (nombreCharacter) {
+         getCharacter();
+       }
+     };
+     fetchData();
+   }, [nombreCharacter, character]); */
 
   const indice = parseInt(character);
-/* const [character, setCharacter] = useState([])
-    const [count, setCount ]= useState(1)
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
-        const data = await res.json()
-  
-        setCharacter(data.docs)
-      }
-      fetchData()
-    }, [count])
-  
-    console.log(character) */
+  /* const [character, setCharacter] = useState([])
+      const [count, setCount ]= useState(1)
+    
+      useEffect(() => {
+        const fetchData = async () => {
+          const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
+          const data = await res.json()
+    
+          setCharacter(data.docs)
+        }
+        fetchData()
+      }, [count])
+    
+      console.log(character) */
+      console.log("character",character)
+
   return (
-    <div className="container">
+
+
+    <div className="container" >
       <h1>Buscador de personajes</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -80,17 +93,18 @@ const SearchCharacters = () => {
           value={busqueda}
           placeholder="Escribí una personaje"
           onChange={handleInputChange}
-        />
+          />
         <button type="submit" className="search-button">
           Buscar
         </button>
       </form>
 
-      <div className="movie-list ">
-        {Array.isArray(character) &&
-          character.map((character, _id) => {
-            <CardCharacter key={_id} character={character} />;
-          })}
+      <div className="cards">
+        {          
+          character?.map((character, _id) => {
+            return (<CardCharacter key={_id} character={character} />)
+          })
+        }
       </div>
     </div>
   );

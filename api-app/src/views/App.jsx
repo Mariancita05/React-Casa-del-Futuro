@@ -6,8 +6,8 @@ import { CardCharacter } from "../components/CardCharacter";
 
 function App() {
   return (
-    <>
-      <main>
+    <div className="bgApp">
+     
       <h1 className="your-style titulo">LOS SIMPSON</h1>
         <Link
           style={{ textDecoration: "none", color: "#fff" }}
@@ -15,8 +15,8 @@ function App() {
         >
           <button>PERSONAJES</button>
         </Link>
-      </main>
-    </>
+   
+    </div>
   );
 
   /* const [character, setCharacter] = useState([])
