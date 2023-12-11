@@ -4,10 +4,10 @@ import { CardCharacter } from "../components/CardCharacter";
 import CountsPage from '../components/CountsPage';
 import './Card.css'
 
-const RandomCharacter = ({ count, handleSuma, handleResta }) => {
+const RandomCharacter = () => {
   const [character, setCharacter] = useState([])
-   /* const [count, setCount] = useState(1) 
- */
+   const [count, setCount] = useState(1) 
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
@@ -20,14 +20,14 @@ const RandomCharacter = ({ count, handleSuma, handleResta }) => {
 
   console.log(character)
 
-   /* const handleSuma = () => {
+   const handleSuma = () => {
     setCount(count + 1)
   }
 
   const handleResta = () => {
     count == 0 ? setCount(count) : setCount(count - 1)
   } 
- */
+
   return (
     <div className='bg'>
       <h1>LOS SIMPSONS</h1>

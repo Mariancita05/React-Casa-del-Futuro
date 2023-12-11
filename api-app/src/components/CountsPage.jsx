@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 /* import CountsPage from '../components/CountsPage'; */
 import '../views/Card.css'
 
-const CountsPage = () => {
-    const [count, setCount] = useState(1)
-    const [character, setCharacter] = useState([]);
+const CountsPage = ({ count, handleSuma, handleResta }) => {
+    /* const [count, setCount] = useState(1) */
+    /* const [character, setCharacter] = useState([]); */
 
-    useEffect(() => {
+    /* useEffect(() => {
       const fetchData = async () => {
         const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
         const data = await res.json()
@@ -18,15 +18,15 @@ const CountsPage = () => {
       fetchData()
     }, [count])
   
-    console.log(character)
+    console.log(character) */
   
-    const handleSuma = () => {
+/*     const handleSuma = () => {
       setCount(count + 1)
     }
   
     const handleResta = () => {
       count == 0 ? setCount(count) : setCount(count - 1)
-    }
+    } */
 
     return (
         <div >
