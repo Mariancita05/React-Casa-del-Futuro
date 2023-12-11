@@ -9,6 +9,7 @@ import App from "../src/views/App";
 import SearchCharacters from "./views/SearchCharacters";
 import RandomCharacter from "./views/RandomCharacter";
 import Character from "./components/Character";
+import GenreCharacter from './views/GenreCharacter';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
           <Route path="randomCharacter" element={<RandomCharacter/>}/>
           <Route path="characters/:nombreCharacter" element={<CardCharacter />} />
           <Route path="search" element={<SearchCharacters/>}/>
+          <Route path="genre" element={<GenreCharacter/>}/>
           <Route path="characterInfo/:nombreCharacter" element={<Character/>}/>
         </Route>
         <Route path="*" element={<Navigate replace to="/" />} />

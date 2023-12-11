@@ -83,10 +83,10 @@ const SearchCharacters = () => {
       console.log("character",character)
 
   return (
+    < >
 
-
-    <div className="container" >
-      <h1>Buscador de personajes</h1>
+    <div className="container-name" >
+      <h1>Buscar por nombre</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -107,6 +107,59 @@ const SearchCharacters = () => {
         }
       </div>
     </div>
+    <div className="container-genre" >
+    <h1>Buscar por género</h1>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={busqueda}
+        placeholder="Escribí una personaje"
+        onChange={handleInputChange}
+        />
+      <button type="submit" className="search-button">
+        Buscar
+      </button>
+    </form>
+
+    <div className="cards">
+      {          
+        character?.map((character, _id) => {
+          return (<CardCharacter key={_id} character={character} />)
+        })
+      }
+    </div>
+  </div>
+  <div className="container-status" >
+  <h1>Buscar por estado</h1>
+
+  <button type="submit" className="search-button">
+      Buscar
+    </button>
+    <button type="submit" className="search-button">
+      Buscar
+    </button>
+  <form onSubmit={handleSubmit}>
+    <input
+      type="text"
+      value={busqueda}
+      placeholder="Escribí una personaje"
+      onChange={handleInputChange}
+      />
+    <button type="submit" className="search-button">
+      Buscar
+    </button>
+  </form>
+
+  <div className="cards">
+    {          
+      character?.map((character, _id) => {
+        return (<CardCharacter key={_id} character={character} />)
+      })
+    }
+  </div>
+</div>
+
+</ >
   );
 };
 
