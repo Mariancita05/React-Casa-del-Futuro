@@ -85,7 +85,7 @@ const SearchCharacters = () => {
   return (
     < >
 
-    <div className="container-name" >
+    <div className="container container-name" >
       <h1>Buscar por nombre</h1>
       <form onSubmit={handleSubmit}>
         <input

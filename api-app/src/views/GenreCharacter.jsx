@@ -4,9 +4,10 @@ import { CardCharacter } from "../components/CardCharacter";
 import './Card.css'
 import CountsPage from '../components/CountsPage';
 
-const GenreCharacter = ({count, handleSuma, handleResta }) => {
+const GenreCharacter = () => {
     const [characters, setCharacters] = useState([])
     const [filteredCharacters, setFilteredCharacters] = useState([]);
+    const [count, setCount] = useState(1) 
     const [counts, setCounts] = useState(0);
    
   
@@ -54,6 +55,14 @@ const GenreCharacter = ({count, handleSuma, handleResta }) => {
       
     setCounts(characters.length);
       };
+
+      const handleSuma = () => {
+        setCount(count + 1)
+      }
+    
+      const handleResta = () => {
+        count == 0 ? setCount(count) : setCount(count - 1)
+      } 
     
   
     return (

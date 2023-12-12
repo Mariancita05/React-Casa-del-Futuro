@@ -1,104 +1,86 @@
-import React from 'react'
-import {Link, Outlet, useNavigate } from 'react-router-dom'
-import '../src/views/App.css'
+import { React } from "react";
+import { Link, Outlet, useNavigate, NavLink } from "react-router-dom";
+import "../src/views/App.css";
+import { useState } from "react";
 
 const Layout = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate ();
-
-  
-
-  
-const handleSearchChange = (event) => {
-    
- 
-const selectedValue = event.target.value;
+  const handleSearchChange = (event) => {
+    const selectedValue = event.target.value;
 
     switch (selectedValue) {
-      case 'nombre':
-        navigate('/search');
+      case "nombre":
+        navigate("/search");
         break;
-      case 'genero':
-        navigate('/genre');
+      case "genero":
+        navigate("/genre");
         break;
-      case 'estado':
-        navigate('/search/estado');
-        break;      
-default:
+      default:
         break;
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  
   return (
     <>
-  {/*     <header>
-        <nav>
-          <ul>
-            <li><Link style={{ textDecoration: "none", color: "#fff" }} to='/'>HOME</Link></li>
-            <li><Link style={{ textDecoration: "none", color: "#fff" }} to='/randomCharacter'>PERSONAJES</Link></li>
-            <li >
-              <label htmlFor="buscar">BUSCAR</label>
-                <select name="buscar" id="">
-                  <option value="nombre"><Link style={{ textDecoration: "none", color: "#fff" }} to='/search'>NOMBRE</Link></option>
-                  <option value="genero"><Link style={{ textDecoration: "none", color: "#fff" }} to='/search'>GÉNERO</Link></option>
-                  <option value="estado"><Link style={{ textDecoration: "none", color: "#fff" }} to='/search'>ESTADO</Link></option>
-                </select>            
-            </li>
-            
-          </ul>     
-            
-            
-        </nav>
-
-      </header> */}
-
-{/* <header>
-      <nav>
-        <ul>
-          <li><Link to='/' style={{ textDecoration: "none", color: "#fff" }}>HOME</Link></li>
-          <li><Link to='/randomCharacter' style={{ textDecoration: "none", color: "#fff" }}>PERSONAJES</Link></li>
-          <li>
-            <label htmlFor="buscar">BUSCAR</label>
-            <select name="buscar" id="buscarSelect" onChange={handleSearchChange}> */}
-              {/* <option value="nombre">NOMBRE</option>
-              <option value="genero">GÉNERO</option>
-              <option value="estado">ESTADO</option> */}
-
-             {/*  <Link to='/search' style={{ textDecoration: "none", color: "#fff" }}>NOMBRE</Link>
-              <Link to='/randomCharacter' style={{ textDecoration: "none", color: "#fff" }}>GENERO</Link>
-              <Link to='/randomCharacter' style={{ textDecoration: "none", color: "#fff" }}>ESTADO</Link>
-            </select>
-          </li>
-        </ul>
-      </nav>
-    </header> */}
-
-<header>
-        <nav>
-          <ul>
-            <li><Link to='/' style={{ textDecoration: "none", color: "#fff" }}>HOME</Link></li>
-            <li><Link to='/randomCharacter' style={{ textDecoration: "none", color: "#fff" }}>PERSONAJES</Link></li>
+      <header >
+        <nav >
+        <Link to="/" className="title">
+        HOME
+      </Link>
+      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+          <ul className={menuOpen ? "open" : ""}>
             <li>
-              <label htmlFor="buscar">BUSCAR</label>
-              <select name="buscar" id="buscarSelect" onChange={handleSearchChange}>
-                <option value="">Selecciona...</option>
-                <option value="nombre">NOMBRE</option>
-                <option value="genero">GÉNERO</option>
-                <option value="estado">ESTADO</option>
+              <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+                HOME
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/randomCharacter"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                PERSONAJES
+              </Link>
+            </li>
+            <li>
+              <label htmlFor="buscar"></label>
+              <select
+                name="buscar"
+                id="buscarSelect"
+                onChange={handleSearchChange}
+                className="menuDesplegable"
+              >
+                <option value="" className="desplegado">Buscar por: </option>
+                <option value="nombre" className="desplegado">NOMBRE</option>
+                <option value="genero" className="desplegado">GÉNERO</option>
               </select>
-              <button onClick={() => handleSearchChange({ target: { value: document.getElementById('buscarSelect').value } })}>
-                
-              </button>
+              <button
+                onClick={() =>
+                  handleSearchChange({
+                    target: {
+                      value: document.getElementById("buscarSelect").value,
+                    },
+                  })
+                }
+              ></button>
             </li>
           </ul>
         </nav>
+        {/* <a href="#" className="hamb"><i class="fa-solid fa-burger-cheese"></i></a> */}
       </header>
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
