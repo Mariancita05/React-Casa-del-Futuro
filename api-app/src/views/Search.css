@@ -1,55 +1,106 @@
-.container {
-    background-image: url(../../public/img/losSimpsonSearch.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    height: 100vh;
+div.container {
+  background-color: white;
+  opacity: 1;
 }
-  form{
+
+
+.container-name-cards,
+.container-genre,
+.container-name {
+  background-image: url(../../public/img/losSimpsonSearch.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+.container-name-cards{
+  height: 100vh;
+}
+/* {
+  background-image: url(../../public/img/losSimpsonSearch.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+ {
+  background-image: url(../../public/img/losSimpsonSearch.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} */
+
+form {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: baseline;
+}
+
+form input {
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  width: 400px;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px rgb(255, 0, 0);
+  border: 2px solid red;
+  color: red;
+}
+
+form input:active,
+form input:focus {
+  outline: none;
+  border: red solid 4px;
+}
+
+form button {
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 230, 1);
+  margin-top: 35px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: rgb(3, 3, 3);
+  font-size: 20px;
+  box-shadow: 2px 2px 2px rgb(3, 3, 3);
+}
+
+form button:hover {
+  background-color: red;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 700px) {
+  .container-name {
+    height: auto;
+  }
+  .container-name-cards {
+    background-size: auto; /* Ajusta el tamaño de la imagen en pantallas más pequeñas */
+    background-position: top; 
+  }
+  form {
     display: flex;
     justify-content: center;
-    justify-content: center;
-    align-items: center;    
-    
-  
-  }
-
-  form input{
-    justify-content: center;
     align-items: center;
-    background-color: white;
-    margin-top: 30px;    
-    padding: 10px;
-    border-radius: 20px;
-    width: 400px;
-    font-size: 20px;
-    box-shadow: 2px 2px 2px rgb(255, 0, 0);
-    border: 2px solid red;
-    color: red;
+    flex-direction: column;
   }
 
-  form input:active, form input:focus{
-    outline: none;
-  border: red solid 4px;
+  form input {
+    /* margin: 15px 30px; */
+    width: 70%;
   }
 
   form button {
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 230, 1);
-    margin-top: 35px;
-    margin-left: 20px;
-    padding: 15px;
-    border-radius: 20px;
-    letter-spacing: 2px;
-    font-weight: 400;
-    color: rgb(3, 3, 3);
-    font-size: 20px;
-    box-shadow: 2px 2px 2px rgb(3, 3, 3);
+    
+    width: 80%;
+    padding: 10px;
   }
 
-  form button:hover {
-    background-color: red;    
-    color: rgb(255, 255, 255);    
-  }
+}

@@ -1,12 +1,155 @@
-button {
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 0, 0);    
-    margin-bottom: 30px;
-    margin-top: -50px;
-    border-radius: 20px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    font-size: 30px;
-    border: 0;
-}
+div.container{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: white;
+  opacity: 1;
+  max-height: 100vh;
+ }
+ 
+ .bg {
+     background-image: url(../../public/img/nubesFondo.jpg);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     height: 100%;
+ }
+ .contenedor-btn-volver{
+    margin-top: 10px;
+ }
+ .btn-volver {    
+     background-color: rgb(255, 0, 0);     
+     padding: 10px;
+     border-radius: 20px;
+     color: rgb(255, 255, 255);
+     font-weight: 500;
+     font-size: 25px;
+     border: 0;
+     box-shadow: 2px 2px 2px white;
+     cursor: pointer;
+ }
+ 
+ .btn-volver:hover{
+     background-color: green;
+     color: red;
+     box-shadow: 2px 2px 2px rgb(255, 230, 0);
+ }
+ 
+ div.personaje{
+     margin: 15px;
+     padding: 20px;
+     background-color: white;
+     opacity: 0.9;
+     box-shadow: 2px 2px 5px black;
+     justify-content: left;    
+     display: flex;
+     flex-wrap: wrap;
+     gap: 30px;
+     height: 70%;
+ }
+ 
+ div.name-img,
+ div.info{
+     display: flex;
+     justify-content: left;        
+     flex-direction: column;
+     flex: 1;
+     max-height: 70%;
+
+     width: 100%; /* Asegura que ocupen todo el ancho */
+  box-sizing: border-box;
+     
+ }
+ 
+ 
+ div.name-img{
+     max-width: 30%;
+     margin-left: 10px 15px;
+     padding: 15px;
+     background-color: red;
+     opacity: 1;
+     box-sizing: border-box;
+ }
+ 
+ div.name-img img{
+     margin-left: 10%;
+     height: 70%;
+     width: 70%;
+ }
+ div.name-img h3{
+     justify-content: center;    
+     display: flex;
+     color: rgb(255, 255, 255);
+     font-size: 30px;
+     margin-left: 15px;
+     margin-bottom: 30px;
+ }
+ div.info{
+     max-width: 70%;
+     box-sizing: border-box;
+     padding: 45px  ;
+     background-color: rgb(255, 230, 0);
+     opacity: 1;
+     width: 100%;
+     color: green;
+ }
+ div.info h3{    
+     margin-bottom: 15px;
+ }
+ @media (max-width: 991px)
+ {    
+     div.container
+     {
+         width: 750px;
+         justify-content: left;         
+         flex-direction: column;
+         height: 100vh;
+     }
+ 
+     div.name-img,
+     div.info{
+         max-width: 100%;    
+ }
+ 
+ }
+ 
+ @media (max-width: 767px)
+ {    
+     div.container
+     {
+         width: 100%;
+         justify-content: left;         
+         flex-direction: column;
+         height: 100%;
+     }
+ 
+     
+ }
+
+ @media (max-width: 767px) {
+    div.container {
+      width: 100%;
+    }
+  
+    div.name-img,
+    div.info {
+      max-width: 100%;
+    }
+  
+    div.personaje {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      width: 100%;
+    }
+  
+    .personaje {
+      height: auto;
+    }
+  }

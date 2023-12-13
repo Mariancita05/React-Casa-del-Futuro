@@ -1,11 +1,10 @@
 .bg {
-    
     background-image: url(../../public/img/nubesFondo.jpg);
     background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 .cards {
@@ -20,7 +19,7 @@
 button {
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);    
+    background-color: rgb(255, 255, 255);
     margin-bottom: 30px;
     margin-top: -50px;
     border-radius: 50px;
@@ -28,27 +27,144 @@ button {
     font-weight: 500;
     font-size: 30px;
     border: 0;
+    box-shadow: 2px 2px 3px rgb(0, 135, 212);
+    font-family: 'Playpen Sans', cursive;     
+
 }
 
-button.suma {   
+button.suma {
     margin-left: 40%;
-    padding: 12px 20px;
+    padding: 12px 25px;
+    background-color: red;    
+    color: rgb(255, 255, 255);  
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
 }
 
-button.resta {  
+button.resta {
+    margin-left: 3%;
+    padding: 14px 29px;
+    background-color: red;    
+    color: rgb(255, 255, 255);  
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
+}
+
+div.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+button.masculino{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;    
+    padding: 12px 20px;
+    background-color: red;    
+    color: rgb(255, 255, 255); 
+    box-shadow: 2px 2px 3px black;
+}
+
+button.femenino{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;
     margin-left: 5%;
     padding: 14px 25px;
+    background-color: red;    
+    color: rgb(255, 255, 255);  
+    box-shadow: 2px 2px 3px black;
 }
-
-h3 {
+button.reset{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-left: 5%;
+    padding: 14px 25px;
+    background-color: red;    
+    color: rgb(255, 255, 255); 
+    box-shadow: 2px 2px 3px black;
+}
+h3.contador{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    /* margin-left: 35%; */
+    /* padding: 10px; */
+    color: red;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+h3.count {
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    margin-top: 10PX;
+    margin-top: 10px;
     margin-left: 45%;
     padding: 10px;
     color: red;
     letter-spacing: 5px;
     font-weight: 700;
-    /* box-shadow: 2px 2px 2px black; */
+    filter: drop-shadow(2px 2px 2px black);
+}
+
+h4.title{
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    color: red;
+    letter-spacing: 10px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    filter: drop-shadow(2px 2px 2px black);
+    background-color: rgb(255, 230, 0);
+    
+}
+
+@media (max-width: 991px)
+{
+    .container
+    {
+        width: 750px;
+    } 
+
+    h3.count {        
+        font-size: 40px;
+        margin-top: 10px;
+        margin-left: 50%;
+        padding: 10px;        
+        font-weight: 700;
+    }
+
+    div.bonones{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px)
+{    
+    .container
+    {
+        width: 100%;
+    }
+
+    h3.count {
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 50%;
+        padding: 10px;        
+        font-weight: 700;
+    }
+
+    div.bonones{
+        flex-direction: column;
+    }
+
 }

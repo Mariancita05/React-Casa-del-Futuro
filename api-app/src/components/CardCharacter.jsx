@@ -1,21 +1,22 @@
-import React from 'react'
-import "./cardCharacter.css"
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./cardCharacter.css";
+import { Link } from "react-router-dom";
 
 export const CardCharacter = ({ character }) => {
   return (
     <article className="card" key={character._id}>
-      {/* <p className="numT">{character._id[0]}</p> */}
-      <Link to={"/characterInfo/"+character.Nombre}>
-      <h2 className="charList__nombre">{character.Nombre}</h2>
-    </Link>
+      <Link 
+      className="nombre"
+      style= {{ textDecoration: "none", color: "#ff0000" }}
+      to= {"/characterInfo/" + character.Nombre } >
+        <h2 >{character.Nombre}</h2>
+      </Link>
       <img
         className="charList__img"
         src={character.Imagen}
         alt={character.Nombre}
       />
-      <h4 className="charList__ocupacion">{character.Ocupacion}</h4>
-      {/* <p className="numB">{character._id[0]}</p> */}
+      <h4 className="ocupacion">{character.Ocupacion}</h4>
     </article>
   );
 };

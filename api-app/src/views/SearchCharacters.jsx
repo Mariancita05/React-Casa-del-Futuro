@@ -3,29 +3,15 @@ import { CardCharacter } from "../components/CardCharacter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Search.css";
-import "../components/cardCharacter.css"
+import "../components/cardCharacter.css";
 
-
+//BUSCAR POR NOMBRE DE PERSONAJE
 
 const SearchCharacters = () => {
   const [busqueda, setBusqueda] = useState("");
   const [currentBusqueda, setCurrentBusqueda] = useState("");
   const [character, setCharacter] = useState([]);
-
-
-  /* const getCharacter = async () => {
-    const res = await fetch(
-      `https://apisimpsons.fly.dev/api/personajes/find/${nombreCharacter}`
-    );
-    const data = await res.json();
-    const found = await data.result.find(
-      (character) => character.Nombre.trim() === nombreCharacter.trim()
-    );
-    setCharacter(found);
-    console.log(found);
-  }; */
-
-
+  const [showCards, setShowCards] = useState(false);
 
   useEffect(() => {
     const getCharacter = async () => {
@@ -34,14 +20,11 @@ const SearchCharacters = () => {
       );
       console.log(response);
       const data = await response.json();
-/*       const found = await data.result.find(
-        (character) => character.Nombre.trim() === busqueda.trim()
-      ); */
 
       console.log(data);
       setCharacter(data.result);
+      setShowCards(data.result.length > 0);
     };
-    console.log("efect");
     getCharacter();
   }, [currentBusqueda]);
 
@@ -56,60 +39,35 @@ const SearchCharacters = () => {
     setCurrentBusqueda(busqueda);
   };
 
-  /*  useEffect(() => {
-     const fetchData = async () => {
-       if (nombreCharacter) {
-         getCharacter();
-       }
-     };
-     fetchData();
-   }, [nombreCharacter, character]); */
-
   const indice = parseInt(character);
-  /* const [character, setCharacter] = useState([])
-      const [count, setCount ]= useState(1)
-    
-      useEffect(() => {
-        const fetchData = async () => {
-          const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
-          const data = await res.json()
-    
-          setCharacter(data.docs)
-        }
-        fetchData()
-      }, [count])
-    
-      console.log(character) */
-      console.log("character",character)
+
+  console.log("character", character);
 
   return (
-    < >
+    <div className={`container ${showCards ? 'container-name' : 'container-name-cards'}`}>
 
-    <div className="container container-name" >
-      <h1>Buscar por nombre</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={busqueda}
-          placeholder="Escribí una personaje"
-          onChange={handleInputChange}
+      <div className=" container-name">
+        <h1 className="title-name">LOS SIMPSONS</h1>
+        
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={busqueda}
+            placeholder="Escribí una personaje"
+            onChange={handleInputChange}
           />
-        <button type="submit" className="search-button">
-          Buscar
-        </button>
-    
-  </form>
+          <button type="submit" className="search-button">
+            Buscar
+          </button>
+        </form>
 
-  <div className="cards">
-    {          
-      character?.map((character, _id) => {
-        return (<CardCharacter key={_id} character={character} />)
-      })
-    }
-  </div>
-</div>
-
-</ >
+        <div className="cards">
+          {character?.map((character, _id) => {
+            return <CardCharacter key={_id} character={character} />;
+          })}
+        </div>
+      </div>
+    </div>
   );
 };
 
