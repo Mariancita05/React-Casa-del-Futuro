@@ -20,8 +20,8 @@ button {
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    margin-bottom: 30px;
-    margin-top: -50px;
+/*     margin-bottom: 30px;
+    margin-top: -50 px;*/
     border-radius: 50px;
     color: rgb(59, 182, 253);
     font-weight: 500;
